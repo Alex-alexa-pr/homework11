@@ -15,9 +15,10 @@ class Person {
 }
 
 class Employee extends Person {
-  #salary = 1200;
-  constructor (firstName, lastName, age, birthDayDate, jobPosition) {
+  #salary = 0;
+  constructor (firstName, lastName, age, birthDayDate, jobPosition, salary) {
     super (firstName, lastName, age, birthDayDate);
+    this.#salary = salary;
     this.jobPosition = jobPosition;
   }
   getYearSalary() {
@@ -38,7 +39,7 @@ class Employee extends Person {
     }
   }
 }
-const employee = new Employee("bob", "mike", 30, "2022-08-21", "boss");
+const employee = new Employee("bob", "mike", 30, "2022-08-21", "boss", 1200);
 const person = new Person("luis", "john", 25, "1995-12-15");
 console.log(employee);
 employee.getYearSalary();
