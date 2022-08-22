@@ -26,8 +26,9 @@ class Employee extends Person {
     console.log(YearSalary);
   }
   celebrate() {
-    let date = new Date (this.birthDayDate);
-    let day = date.getDay();
+    let thisBirthday = new Date(this.birthDayDate);
+    let thisYearBirthday = new Date (thisBirthday.setFullYear(2022));
+    let day = thisYearBirthday.getDay();
     if (day == 6){
       console.log("Happy Birthday, let’s celebrate");
     }
@@ -37,9 +38,10 @@ class Employee extends Person {
     else {
       console.log("Happy Birthday, but I need to work");
     }
+    // console.log(thisYearBirthday);
   }
 }
-const employee = new Employee("bob", "mike", 30, "2022-08-21", "boss", 1200);
+const employee = new Employee("bob", "mike", 30, "2000-08-22", "boss", 1200);
 const person = new Person("luis", "john", 25, "1995-12-15");
 console.log(employee);
 employee.getYearSalary();
